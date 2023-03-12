@@ -3,7 +3,11 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:mob/Aboutus/Aboutus.dart';
+import 'package:mob/Elveated.dart';
 import 'package:mob/Footer.dart';
+import 'package:mob/Home%20.dart';
+import 'package:mob/Login/login.dart';
 import 'package:mob/Slider/Carosel.dart';
 import 'package:mob/cards.dart';
 
@@ -19,36 +23,7 @@ print("in call me");
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(appBar:AppBar(
-     
-     shadowColor: Colors.grey, 
-     backgroundColor: Colors.grey,
-     elevation: 50,
-     title: Text("One Who Creates"),
-
-     actions: [
-      
-      Icon(Icons.more_vert),
-      
-     ],
-    ) ,body: Column(children:<Widget> [
-     Carosel()
-
-
-
-  ]),bottomNavigationBar: BottomNavigationBar(
-    items: [
-      BottomNavigationBarItem(icon: Icon(Icons.home,), label: "Home")
-      ,
-    BottomNavigationBarItem(icon: Icon(Icons.business ), label: "Business"),
-    BottomNavigationBarItem(icon: Icon(Icons.search ), label: "Search",),
-      
-    ],
-    backgroundColor: Colors.white,
-    elevation: 50,
-    onTap: (value) => {},
-    
-  ),backgroundColor: Colors.black54,));
+    return MaterialApp(home:HomeComponent(),routes:{'/':(context) =>HomeComponent(),"/login":(context) => Login() } ,);
 
     
   }
