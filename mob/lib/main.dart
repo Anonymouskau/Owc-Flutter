@@ -23,7 +23,7 @@ print("in call me");
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home:HomeComponent(),routes:{'/':(context) =>HomeComponent(),"/login":(context) => Login() } ,);
+    return MaterialApp(home:HomeComponent(),initialRoute: "/",routes:{"/login":(context) => Login() } ,);
 
     
   }
