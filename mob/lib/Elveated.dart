@@ -12,6 +12,11 @@ class Elevated extends StatelessWidget{
       child: Text("${this.props}"),
     onPressed: () => {Navigator.pushNamed(context,"/login")},
     style: ElevatedButton.styleFrom(backgroundColor: Colors.red.shade400),
+  
+  
+  
   );
   }
+
+
 }
