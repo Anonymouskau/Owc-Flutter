@@ -25,9 +25,16 @@ import '../config.dart';
          Padding(padding:  EdgeInsets.all(12),child: TextField(obscureText: true,decoration: InputDecoration(labelText:"Password",),controller: mycontroller2,),),
          SizedBox(height: 20,),
         Center(child: ElevatedButton(onPressed: () async {
-        var resp= await  post(Uri.parse(new config().url+"/get"),body: {"email":mycontroller.text});
+        var resp= await  post(Uri.parse(new config().url+"/User/Login"),body: {"email":mycontroller.text,"password":mycontroller2.text});
 
-            print(resp.body);      
+      Map<String,dynamic>user=    jsonDecode(resp.body);
+              if(mycontroller.text==user['email']){
+                Navigator.pushNamed(context,'/product' );
+
+              }
+              else{
+                Navigator.pushNamed(context,'/login' );
+              }   
                    
          }
           ,child: Text("Sign in "),style: ElevatedButton.styleFrom(backgroundColor: Colors.black)),),
